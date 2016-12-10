@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Football.Models.Team>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Список команд</title>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                Название команды
+            </th>
+            <th>
+                Тренер
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coach)
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

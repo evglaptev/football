@@ -1,0 +1,55 @@
+﻿@model Football.Models.Player
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Удаление игрока</title>
+</head>
+<body>
+    <div> 
+
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                <dl>
+                    <dt>
+                        Имя
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(m => m.Name)
+                    </dd>
+                    <dt>
+                        Возвраст
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(m => m.Age)
+                    </dd>
+                    <dt>
+                        Позиция
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(m => m.Position)
+                    </dd>
+                    <dt>
+                        Команда
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(m => m.Team.Name)
+                    </dd>
+                </dl>
+                <span>@Html.HiddenFor(m=>m.Id)</span>
+                <p>
+                    <input type="submit" value="Удалить" />
+                </p>
+            </fieldset>
+        }
+
+    </div>
+</body>
+</html>

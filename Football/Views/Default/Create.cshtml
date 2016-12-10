@@ -1,0 +1,49 @@
+﻿@model Football.Models.Player
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                <legend>
+                    Футболист
+                </legend>
+                <p>
+                    Имя игрока <br/>
+                    @Html.EditorFor(p=>p.Name)
+                </p>
+                <p>
+                    Возраст <br />
+                    @Html.EditorFor(p => p.Age)
+                </p>
+                <p>
+                    Позиция <br />
+                    @Html.EditorFor(p => p.Position)
+                </p>
+                <p>
+                    Команда <br />
+                    @Html.DropDownListFor(p=>p.TeamId, ViewBag.Teams as SelectList)
+                </p>
+                <p>
+                    <input type="submit" value="Добавить игрока" />
+                </p>
+            </fieldset>
+
+        }
+    </div>
+    <div>
+        @Html.ActionLink("К списку игроков","Index")
+    </div>
+</body>
+</html>
